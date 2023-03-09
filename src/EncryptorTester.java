@@ -98,7 +98,7 @@ public class EncryptorTester
         }
 
         // UNCOMMENT THE SECTIONS BELOW TO TEST EACH PART
-/*
+
     // -----------------------------------
     //   ---- TEST PART B: encryptBlock ----
     //   -----------------------------------
@@ -145,7 +145,7 @@ public class EncryptorTester
       System.out.println("EXPECTED: " + expectedEncryptedBlock3);
       System.out.println("  ACTUAL: " + actualEncryptedBlock3);
     }
-*/
+
 /*   
     // -------------------------------------
     // ---- TEST PART C: encryptMessage ----

@@ -55,11 +55,13 @@ public class Encryptor
      */
     public String encryptBlock()
     {
-        for(int i = 0; i < numRows; i++){
-            for(int j = 0; j < numCols; j++){
-                
+        String crypt = "";
+        for(int i = 0; i < numCols; i++){
+            for(int j = 0; j < numRows; j++){
+                crypt += letterBlock[j][i];
             }
         }
+        return crypt;
     }
 
     /** Encrypts a message.
@@ -70,7 +72,17 @@ public class Encryptor
      */
     public String encryptMessage(String message)
     {
-        return null;
+        letterBlock = new String[numRows][numRows];
+        String crypt = "";
+        for(int i = 0; i < message.length(); i++){
+            if(message.length() < numRows*numCols){
+                fillBlock(message);
+            }
+            if(message.length() > numCols * numRows){
+
+            }
+        }
+        for()
     }
 
     /**  Decrypts an encrypted message. All filler 'A's that may have been
