@@ -220,7 +220,7 @@ public class EncryptorTester
       System.out.println("  ACTUAL: " + actualEncrypted5);
     }
 
-/*    
+
     // -------------------------------------
     // ---- TEST PART D: decryptMessage ----
     // -------------------------------------
@@ -293,7 +293,10 @@ public class EncryptorTester
       System.out.println("EXPECTED: " + expectedDecrypted6);
       System.out.println("  ACTUAL: " + actualDecrypted6);
     }
-*/
+        Encryptor encryptors = new Encryptor(10, 6);
+        String decryptedMsg = encryptors.decryptMessage("Yre r gTAIoecayme SOu t pe,I ! eiets TIAwxnnesB  AepgcdaUWDA\n" +
+                "\n");
+        System.out.println(decryptedMsg);
     }
 
     public static void print2DArray(String[][] arr)

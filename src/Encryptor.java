@@ -106,7 +106,26 @@ public class Encryptor
      */
     public String decryptMessage(String encryptedMessage)
     {
-
+        int blocks=encryptedMessage.length()/(numCols*numRows);
+        String temp=encryptedMessage;
+        String crypt = "";
+        while (blocks > 0) {
+            fill(temp);
+            encryptBlock();
+            for (String[] strings : letterBlock) {
+                for (int i = 0; i < letterBlock[0].length; i++) {
+                    if(strings[i].equals("A")  && (blocks - 1 == 0)){
+                        crypt = crypt;
+                    }
+                    else{
+                        crypt += strings[i];
+                    }
+                }
+            }
+            temp=temp.substring(numCols*numRows);
+            blocks--;
+        }
+        return crypt;
     }
     public void fill(String message){
         int counter = 0;
