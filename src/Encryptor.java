@@ -72,17 +72,14 @@ public class Encryptor
      */
     public String encryptMessage(String message)
     {
-        letterBlock = new String[numRows][numRows];
         String crypt = "";
-        for(int i = 0; i < message.length(); i++){
-            if(message.length() < numRows*numCols){
-                fillBlock(message);
-            }
-            if(message.length() > numCols * numRows){
-
-            }
+        int place = 0;
+        while(place < message.length()){
+            fillBlock(message.substring(place));
+            crypt += encryptBlock();
+            place += numCols * numRows;
         }
-        for()
+        return crypt;
     }
 
     /**  Decrypts an encrypted message. All filler 'A's that may have been
@@ -109,6 +106,20 @@ public class Encryptor
      */
     public String decryptMessage(String encryptedMessage)
     {
-        return null;
+
+    }
+    public void fill(String message){
+        int counter = 0;
+        for(int i = 0; i < letterBlock[0].length; i++){
+            for(int j = 0; j < letterBlock.length; j++){
+                if(counter < message.length()) {
+                    letterBlock[j][i] = message.substring(counter, counter + 1);
+                    counter++;
+                }
+                else{
+                    letterBlock[j][i] = "A";
+                }
+            }
+        }
     }
 }
